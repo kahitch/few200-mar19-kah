@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular200';
+  title = 'Front End Web 200';
+  topics = ['Angular Modules', 'Components', 'Services'];
 }

@@ -1,0 +1,13 @@
+<ul class="list-unstyled">
+  <h4>{{ title }}</h4>
+  <li class="alert"
+      [ngClass]="{'completed': item.completed, 'alert-danger': item.completed, 'alert-info': !item.completed}"
+      *ngFor="let item of items">
+    <input type="button"
+           (click)="item.completed = true"
+           class="btn btn-sm btn-success"
+           *ngIf="!item.completed"
+           value="x">
+    {{ item.description }}
+  </li>
+</ul>
