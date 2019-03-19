@@ -1,0 +1,16 @@
+<div>
+  <input (click)="decrement()"
+         type="button"
+         class="btn btn-primary btn-sm"
+         value="-">
+  <span>{{ count$ | async }}</span>
+  <input (click)="increment()"
+         type="button"
+         class="btn btn-primary btn-sm"
+         value="+">
+  <span> </span>
+  <input (click)="reset()"
+         type="button"
+         class="btn btn-warning btn-sm"
+         value="RESET">
+</div>
