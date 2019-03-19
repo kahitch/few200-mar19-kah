@@ -4,26 +4,36 @@ import * as actions from '../actions/counter.actions';
 
 export interface State {
   count: number;
+  by: number;
 }
 
 const initialState: State = {
-  count: 0
+  count: 0,
+  by: 1
 };
 
 export function reducer(state: State = initialState, action: actions.All): State {
   switch (action.type) {
     case actions.INCREMENT: {
       return {
-        count: state.count + 1
+        count: state.count + state.by,
+        by: state.by
       };
     }
     case actions.DECREMENT: {
       return {
-        count: state.count - 1
+        count: state.count - state.by,
+        by: state.by
       };
     }
     case actions.RESET: {
       return initialState;
+    }
+    case actions.COUNT_BY_SET: {
+      return {
+        count: state.count,
+        by: action.by
+      };
     }
     default: {
       return state;

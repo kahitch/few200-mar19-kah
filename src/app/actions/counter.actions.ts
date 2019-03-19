@@ -20,7 +20,18 @@ export class ResetCounter implements Action {
   constructor() { }
 }
 
-export type All = CountImcremented | CountDecremented | ResetCounter;
+export const COUNT_BY_SET = '[counter] Count by Set';
+export class SetCountBy implements Action {
+  readonly type = COUNT_BY_SET;
+  constructor(public by: number) { }
+}
+
+
+export type All =
+  CountImcremented
+  | CountDecremented
+  | ResetCounter
+  | SetCountBy;
 
 // Discriminated Unions
 
