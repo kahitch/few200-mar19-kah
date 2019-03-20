@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { State, selectCurrent, selectAtStart, selectCountingBy } from '../../reducers';
+import { State, selectCurrent, decrementDisabled, selectCountingBy, resetDisabled } from '../../reducers';
 import { Observable } from 'rxjs';
 import * as actions from '../../actions/counter.actions';
 
@@ -12,15 +12,16 @@ import * as actions from '../../actions/counter.actions';
 export class ReduxDemoComponent implements OnInit {
 
   atStart$: Observable<boolean>;
+  resetDisabled$: Observable<boolean>;
   count$: Observable<number>;
   countingBy$: Observable<number>;
   constructor(private store: Store<State>) { }
 
   ngOnInit() {
-    // doing it this way has cost S2 TONS of refactoring time.
     this.count$ = this.store.select(selectCurrent);
-    this.atStart$ = this.store.select(selectAtStart);
+    this.atStart$ = this.store.select(decrementDisabled);
     this.countingBy$ = this.store.select(selectCountingBy);
+    this.resetDisabled$ = this.store.select(resetDisabled);
   }
 
   increment() {

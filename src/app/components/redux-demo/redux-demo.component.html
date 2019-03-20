@@ -11,7 +11,7 @@
          value="+">
   <input (click)="reset()"
          type="button"
-         [disabled]="atStart$ | async"
+         [disabled]="resetDisabled$ | async"
          class="btn btn-warning btn-sm"
          value="RESET">
 </div>
