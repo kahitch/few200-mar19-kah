@@ -3,6 +3,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { tap, map, filter } from 'rxjs/operators';
 
 import * as countActions from '../actions/counter.actions';
+import * as appActions from '../actions/app.actions';
 
 @Injectable()
 export class CounterEffects {
@@ -10,7 +11,7 @@ export class CounterEffects {
   @Effect()
   loadCountBy = this.actions$
     .pipe(
-      ofType(appActions.App_START), // if it is the app start
+      ofType(appActions.APP_START), // if it is the app start
       map(() => localStorage.getItem('count')), // go check to see if we have a count
       filter(by => by !== null), // if we do...
       map(by => parseInt(by, 10)), // turn it into a number

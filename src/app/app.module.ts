@@ -31,7 +31,8 @@ import { TodolistModule } from './features/todolist/todolist.module';
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(), // <-- "can" be removed fro production.
-    EffectsModule.forRoot([CounterEffects])
+    EffectsModule.forRoot([CounterEffects]),
+    TodolistModule
   ],
   providers: [],
   bootstrap: [AppComponent]
