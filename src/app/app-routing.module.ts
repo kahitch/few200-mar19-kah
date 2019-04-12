@@ -1,3 +1,4 @@
+import { BookcollectionComponent } from './features/bookcollection/bookcollection.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'todo-list',
     component: TodolistComponent
+  },
+  {
+    path: 'book-collection',
+    component: BookcollectionComponent
   },
   {
     path: '**',
