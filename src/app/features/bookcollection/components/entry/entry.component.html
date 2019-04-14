@@ -1,3 +1,13 @@
-<p>
-  entry works!
-</p>
+<div class="form-group">
+  <h5>Add a Book to the Collection</h5>
+  <label>Title</label>
+  <input class="form-control" #title>
+  <label>Author</label>
+  <input class="form-control" #author>
+  <label>Format</label>
+  <select class="form-control" #format [value]="''">
+    <option *ngFor="let format of formats">{{format}}</option>
+  </select>
+  <br>
+  <input type="button" class="btn btn-primary" (click)="add(title, author, format)" value="Add">
+</div>

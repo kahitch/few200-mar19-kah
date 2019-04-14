@@ -2,7 +2,7 @@ import * as fromList from './list';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { BookItem } from '../models';
 
-const featureName = 'todosFeature';
+const featureName = 'booksFeature';
 
 export interface State {
     list: fromList.State;
@@ -30,5 +30,5 @@ const { selectAll: selectBookEntities } = fromList.adapter.getSelectors(selectLi
 
 // 4. The selectors for the components.
 
-// TodoItem[]
+// BookItem[]
 export const selectBookItems = createSelector(selectBookEntities, e => e as BookItem[]);

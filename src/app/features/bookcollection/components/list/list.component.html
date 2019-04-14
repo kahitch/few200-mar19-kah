@@ -1,3 +1,18 @@
-<p>
-  list works!
-</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Format</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <th>{{ item.id }}</th>
+      <th>{{ item.title }}</th>
+      <th>{{ item.author }}</th>
+      <th>{{ item.format }}</th>
+    </tr>
+  </tbody>
+</table>
